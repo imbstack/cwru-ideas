@@ -6,6 +6,7 @@
 
 // Import all the default blueprint modules so that we can access their mixins.
 @import "blueprint";
+@import "blueprint/buttons";
 
 // Import the non-default scaffolding module.
 @import "blueprint/scaffolding";
@@ -23,6 +24,10 @@
 @include blueprint-scaffolding("body");
 @include sticky-footer(54px); 
 @mixin box-shadow($color: $default-box-shadow-color, $hoff: $default-box-shadow-h-offset, $voff: $default-box-shadow-v-offset, $blur: $default-box-shadow-blur){};
+@mixin button-colors($font_color: $blueprint_button_font_color, $bg_color: $blueprint_button_background_color, $border_color: $blueprint_button_border_color, $border_highlight_color: $border_color + #101010) {
+  background-color: $bg_color;
+  border-color: $border_highlight_color $border_color $border_color $border_highlight_color;
+  color: $font_color; }
 
 body {
   @include blueprint-typography(true);
@@ -38,6 +43,9 @@ form {
 
 // Page layout can be done using mixins applied to your semantic classes and IDs:
 body.two-col {
+  @include box-shadow();
+  .button-to submit {
+    @include button-colors();}
   #container {
     @include container; }
   #header, #footer {
@@ -47,7 +55,6 @@ body.two-col {
     $sidebar-columns: floor($blueprint-grid-columns / 3);
     @include column($sidebar-columns); }
   #content {
-    box-shadow{};
     // Two thirds of the grid columns, rounding up.
     // With 24 cols, this is 16.
     $content-columns: ceil(2 * $blueprint-grid-columns / 3);

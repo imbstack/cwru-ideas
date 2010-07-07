@@ -5,6 +5,8 @@ RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
+require 'casclient'
+require 'casclient/frameworks/rails/filter'
 
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
@@ -43,4 +45,14 @@ Rails::Initializer.run do |config|
   config.gem "haml"
   config.gem "compass"
 
+
+
 end
+
+
+CASClient::Frameworks::Rails::Filter.configure(
+    :cas_base_url => "https://login.case.edu",
+    :login_url => "https://login.case.edu/cas/login",
+    :logout_url => "https://login.case.edu/cas/logout",
+    :validate_url => "https://login.case.edu/cas/serviceValidate"
+)

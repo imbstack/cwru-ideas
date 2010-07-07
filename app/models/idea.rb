@@ -1,5 +1,6 @@
 class Idea < ActiveRecord::Base
 
+
   def vote(dir)
 		if dir.eql? 'up'
 			self.upvotes += 1

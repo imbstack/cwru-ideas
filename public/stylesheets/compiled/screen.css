@@ -163,7 +163,7 @@ html, body {
   height: 54px;
 }
 
-/* line 27, ../../../app/stylesheets/screen.scss */
+/* line 32, ../../../app/stylesheets/screen.scss */
 body {
   line-height: 1.5;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -537,7 +537,13 @@ form textarea {
   height: 250px;
 }
 
-/* line 41, ../../../app/stylesheets/screen.scss */
+/* line 47, ../../../app/stylesheets/screen.scss */
+body.two-col .button-to submit {
+  background-color: #f5f5f5;
+  border-color: #eeeeee #dedede #dedede #eeeeee;
+  color: #565656;
+}
+/* line 49, ../../../app/stylesheets/screen.scss */
 body.two-col #container {
   width: 950px;
   margin: 0 auto;
@@ -548,7 +554,7 @@ body.two-col #container {
 body.two-col #container {
   display: block;
 }
-/* line 43, ../../../app/stylesheets/screen.scss */
+/* line 51, ../../../app/stylesheets/screen.scss */
 body.two-col #header, body.two-col #footer {
   display: inline;
   float: left;
@@ -559,7 +565,7 @@ body.two-col #header, body.two-col #footer {
 * html body.two-col #header, * html body.two-col #footer {
   overflow-x: hidden;
 }
-/* line 45, ../../../app/stylesheets/screen.scss */
+/* line 53, ../../../app/stylesheets/screen.scss */
 body.two-col #sidebar {
   display: inline;
   float: left;
@@ -570,7 +576,7 @@ body.two-col #sidebar {
 * html body.two-col #sidebar {
   overflow-x: hidden;
 }
-/* line 49, ../../../app/stylesheets/screen.scss */
+/* line 57, ../../../app/stylesheets/screen.scss */
 body.two-col #content {
   display: inline;
   float: left;
