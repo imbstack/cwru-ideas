@@ -1,0 +1,13 @@
+<p>
+  <b>Title:</b>
+  <%=h @broadcast.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @broadcast.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_broadcast_path(@broadcast) %> |
+<%= link_to 'Back', broadcasts_path %>

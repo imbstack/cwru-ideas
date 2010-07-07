@@ -1,0 +1,27 @@
+<div id="container">
+
+<div id="content"
+<p>
+  <b>Title:</b>
+  <%=h @idea.title %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%=h @idea.author %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @idea.body %>
+</p>
+
+<p>
+<b>Upvotes: </b><%=h @idea.upvotes %>
+<b>Downvotes: </b><%=h @idea.downvotes %>
+</p>
+
+
+<%= link_to 'Edit', edit_idea_path(@idea) %> |
+<%= link_to 'Back', ideas_path %>
+</div>
