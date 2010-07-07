@@ -1,4 +1,7 @@
 class IdeasController < ApplicationController
+
+	before_filter :check_permissions, :except => [:index, :show]
+
   # GET /ideas
   # GET /ideas.xml
   def index
@@ -94,6 +97,19 @@ class IdeasController < ApplicationController
 	  respond_to do |format|
 		  format.html {redirect_to(ideas_url)}
 		  format.xml {head :ok}
+	  end
+  end
+
+  private
+
+  def check_permissions
+	  return unless !params[:id].nil?
+	  creator = Idea.find(params[:id]).creator
+	  if creator != @current_user.id
+		  respond_to do |format|
+			  format.html { redirect_to(ideas_url)}
+			  format.xml {head :method_not_allowed}
+		  end
 	  end
   end
 
