@@ -5,9 +5,20 @@
 
 class ApplicationController < ActionController::Base
   before_filter CASClient::Frameworks::Rails::Filter
+  before_filter :setup_cas_user
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
-  # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+
+  private
+  	def setup_cas_user
+		@message = ''
+		return unless session[:cas_user].present?
+		@current_user = User.find_or_create_by_caseid(session[:cas_user])
+		if @current_user.name.nil?
+		       @current_user.name = 'New User'
+		       @message = 'Please go to your ', @current_user ,' to update your information.'
+		end	       
+		@current_user.present?
+	end
 end

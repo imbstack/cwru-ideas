@@ -9,7 +9,7 @@
     - @ideas.each do |idea|
       %tr
         %td= h idea.title
-        %td= h idea.author
+        %td= h idea.get_creator_name
         %td= h idea.body
         %td= h idea.upvotes
         %td= h idea.downvotes

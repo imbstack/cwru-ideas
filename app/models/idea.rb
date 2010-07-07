@@ -1,5 +1,10 @@
 class Idea < ActiveRecord::Base
 
+  def get_creator_name
+	  creator = User.find(self.creator)
+	  return creator.name
+  end
+
 
   def vote(dir)
 		if dir.eql? 'up'
@@ -11,6 +16,11 @@ class Idea < ActiveRecord::Base
 			self.downvotes = 0
 		end
 		self.save
+  end
+
+  def add_creator(creator)
+	  self.creator = creator
+	  self.save
   end
 
 

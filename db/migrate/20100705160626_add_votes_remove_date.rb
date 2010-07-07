@@ -6,5 +6,8 @@ class AddVotesRemoveDate < ActiveRecord::Migration
   end
 
   def self.down
+	  remove_column "ideas", "upvotes"
+	  remove_column "ideas", "downvotes"
+	  add_column "ideas", "date", :date
   end
 end

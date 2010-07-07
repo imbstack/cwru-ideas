@@ -14,6 +14,7 @@ class IdeasController < ApplicationController
   # GET /ideas/1.xml
   def show
     @idea = Idea.find(params[:id])
+    @author = User.find(@idea.creator)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,6 +27,7 @@ class IdeasController < ApplicationController
   def new
     @idea = Idea.new
     @idea.vote('new');
+    @idea.add_creator(@current_user.id)
 
     respond_to do |format|
       format.html # new.html.erb

@@ -1,15 +1,10 @@
 <h2>Editing user</h2>
-
 <% form_for(@user) do |f| %>
   <%= f.error_messages %>
 
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :caseid %><br />
-    <%= f.text_field :caseid %>
   </p>
   <p>
     <%= f.label :major %><br />
