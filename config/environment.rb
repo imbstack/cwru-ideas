@@ -44,6 +44,7 @@ Rails::Initializer.run do |config|
 
   config.gem "haml"
   config.gem "compass"
+  config.gem "rubycas-client", :lib => 'casclient'
 
 
 
