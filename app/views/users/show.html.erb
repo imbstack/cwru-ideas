@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @user.name %>
+</p>
+
+<p>
+  <b>Caseid:</b>
+  <%=h @user.caseid %>
+</p>
+
+<p>
+  <b>Major:</b>
+  <%=h @user.major %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
