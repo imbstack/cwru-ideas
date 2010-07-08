@@ -2,9 +2,29 @@
 
 div.story#topIdea {
 	background-color:#E4F1FC;
+	padding:3px;
 }
-div.story p.bBorder {
+div.story div.ideaDesc#full {
 	margin-left:50px;
+}
+div.ideaVote {
+	width:16px;
+	margin-left:18px;
+	line-height:17px;
+	float:left;
+	font-size:12px;
+	text-align:center;
+}
+div.ideaVote > img {
+	margin:0 !important;
+	border:0 !important;
+}
+div.ideaDetails {
+	clear:both;
+	color:#999999;
+	font-size:12px;
+	padding-bottom:4px;
+	padding-top:5px;
 }
 /* CWRU WEBSITE TEMPLATE [A] */
 
@@ -337,7 +357,7 @@ border:none;
 	border-bottom-width: 1px;
 	padding-bottom: 15px;
 	border-bottom-style: solid;
-	border-bottom-color: #e0e0e0;
+	border-bottom-color: #E0E0E0;
 }
 .story {
 	margin: 20px;

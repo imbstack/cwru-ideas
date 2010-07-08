@@ -1,9 +1,4 @@
 %h2= "Welcome #{@current_user.name}!"
 - if !@message.empty?
   %strong= @message[0] + link_to('profile', @message[1]) +  @message[2]
-%br
-%strong= h  @last.get_creator_name 
-%span had an idea that was:
-%strong= h @last.body
-
-
+= render :partial => "ideas/featuredidea", :locals => { :idea => @last }

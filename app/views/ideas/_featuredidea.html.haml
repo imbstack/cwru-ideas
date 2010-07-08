@@ -1,0 +1,12 @@
+.story#topidea
+  %h2= link_to idea.title, @idea
+  .ideaVote
+    = image_tag 'up.png'
+    &#183;
+    = image_tag 'down.png'
+  %p.ideaDesc#full
+    = idea.body
+  .ideaDetails
+    = link_to '203 comments', '#'
+    &#183; submitted by
+    = link_to idea.author, '#'
