@@ -1,4 +1,5 @@
 class Idea < ActiveRecord::Base
+  belongs_to :category
 
   def get_creator_name
 	  creator = User.find(self.creator)

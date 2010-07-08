@@ -5,19 +5,7 @@ div.story#topIdea {
 	padding:3px;
 }
 div.story div.ideaDesc#full {
-	margin-left:50px;
-}
-div.ideaVote {
-	width:16px;
-	margin-left:18px;
-	line-height:17px;
-	float:left;
-	font-size:12px;
-	text-align:center;
-}
-div.ideaVote > img {
-	margin:0 !important;
-	border:0 !important;
+	margin-left:104px;
 }
 div.ideaDetails {
 	clear:both;
@@ -25,6 +13,25 @@ div.ideaDetails {
 	font-size:12px;
 	padding-bottom:4px;
 	padding-top:5px;
+}
+div.supportButton {
+	float:left;
+	position:relative;
+	left:13px;
+}
+div.supportButton > a > span {
+	display:block;
+	width:70px;
+	height:30px;
+}
+div.supportButton > a > span.unsupported {
+	background:url(/images/support.png) 0px 0px;
+}
+div.supportButton > a > span.unsupported:hover {
+	background:url(/images/support.png) 0px -30px;
+}
+div.supportButton > a > span.supported {
+	background:url(/images/support.png) 0px -60px;
 }
 /* CWRU WEBSITE TEMPLATE [A] */
 

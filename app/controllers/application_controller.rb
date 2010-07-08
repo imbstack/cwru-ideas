@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 		return unless session[:cas_user].present?
 		@current_user = User.find_or_create_by_caseid(session[:cas_user])
 		if @current_user.name.nil?
-		       @current_user.name = 'New User'
+		       @current_user.name = :cas_user
 		       @message = 'Please go to your ', @current_user ,' to update your information.'
 		end	       
 		@current_user.present?
