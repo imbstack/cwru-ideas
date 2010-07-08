@@ -4,7 +4,7 @@ div.story#topIdea {
 	background-color:#E4F1FC;
 	padding:3px;
 }
-div.story div.ideaDesc#full {
+div.story p.ideaDesc#full {
 	margin-left:104px;
 }
 div.ideaDetails {

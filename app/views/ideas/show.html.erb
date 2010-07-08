@@ -10,7 +10,9 @@
   <b>Author:</b>
   <%=h @idea.get_creator_name %>
 </p>
-
+<p>
+<b><a href='<%= vote_url(@idea.id) %>'>Vote for this idea!</a></b>
+</p>
 <p>
   <b>Body:</b>
   <%=h @idea.body %>
@@ -18,10 +20,6 @@
 <p>
 <b>Category:</b>
 <%= Category.find(@idea.category_id).name %>
-</p>
-<p>
-<b>Upvotes: </b><%=h @idea.upvotes %>
-<b>Downvotes: </b><%=h @idea.downvotes %>
 </p>
 
 <%= link_to_unless( @current_user.id != @idea.creator, 'Edit', edit_idea_path(@idea)){} %> 
