@@ -1,5 +1,7 @@
 class Idea < ActiveRecord::Base
 
+  has_many :comments
+
   def get_creator_name
 	  creator = User.find(self.creator)
 	  return creator.name
