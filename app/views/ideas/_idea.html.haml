@@ -1,0 +1,14 @@
+.story{:id => (defined? featured != nil) ? "topIdea" : "" }
+  %h2= link_to idea.title, idea
+  .supportButton
+    %a{:href => vote_url(:id => idea.id) }
+      - if Vote.find(:all, :conditions => { :user_id => @current_user.id, :idea_id => idea.id}).length != 0
+        %span.supported
+      - else
+        %span.unsupported
+  %p.ideaDesc#full
+    = idea.body
+  .ideaDetails
+    = link_to '203 comments', '#'
+    &#183; submitted by
+    = link_to idea.get_creator_name, '#'

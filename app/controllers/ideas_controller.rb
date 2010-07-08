@@ -1,6 +1,6 @@
 class IdeasController < ApplicationController
 
-	before_filter :check_permissions, :except => [:index, :show]
+  before_filter :check_permissions, :except => [:index, :show, :support]
 
   # GET /ideas
   # GET /ideas.xml
@@ -90,12 +90,13 @@ class IdeasController < ApplicationController
     end
   end
 
-  def vote
+  def support
 	  @idea = Idea.find(params[:id])
-	  @idea.vote(params[:dir])
+	  v = Vote.new( { :user_id => @current_user.id, :idea_id => params[:id] } )
+	  v.register
 
 	  respond_to do |format|
-		  format.html {redirect_to(ideas_url)}
+		  format.html { redirect_to(ideas_url) }
 		  format.xml {head :ok}
 	  end
   end
