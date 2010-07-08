@@ -15,7 +15,10 @@
   <b>Body:</b>
   <%=h @idea.body %>
 </p>
-
+<p>
+<b>Category:</b>
+<%= Category.find(@idea.category_id).name %>
+</p>
 <p>
 <b>Upvotes: </b><%=h @idea.upvotes %>
 <b>Downvotes: </b><%=h @idea.downvotes %>

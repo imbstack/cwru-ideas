@@ -1,10 +1,9 @@
 .story#topidea
   %h2= link_to idea.title, @idea
-  .ideaVote
-    = image_tag 'up.png'
-    &#183;
-    = image_tag 'down.png'
-  %p.ideaDesc#full
+  .supportButton
+    %a{ :href => '#' }
+      %span.unsupported
+  %div.ideaDesc#full
     = idea.body
   .ideaDetails
     = link_to '203 comments', '#'
