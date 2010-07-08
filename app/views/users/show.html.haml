@@ -1,0 +1,36 @@
+%p
+  %b Name:
+  =h @user.name 
+
+%p
+  %b Case ID:
+  =h @user.caseid 
+
+
+%p
+  %b Major:
+  =h @user.major
+
+
+- if params[:id].to_i == @current_user.id
+  %table
+    %tr
+      %th Title 
+      %th Author
+      %th Body
+      %th Upvotes
+      %th Downvotes
+      - @ideas.each do |idea|
+        %tr
+          %td= h idea.title
+          %td= h idea.get_creator_name
+          %td= h idea.body
+          %td= h idea.upvotes
+          %td= h idea.downvotes
+          %td= render :partial => 'ideas/vote', :locals => {:idea => idea}
+          %td= link_to 'Show', idea
+
+
+
+= link_to 'Edit', edit_user_path(@user)
+= link_to 'Back', users_path 

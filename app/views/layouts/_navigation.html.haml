@@ -5,20 +5,12 @@
       %li
         = link_to 'All Ideas', ideas_path 
         %ul
-          %li
-            %a{:href => "#"} Advising
-          %li
-            %a{:href => "#"} Academics
-          %li
-            %a{:href => "#"} Environment
-          %li
-            %a{:href => "#"} Other
-          %li
-            %a{:href => "#"} Technology
+          %li= link_to 'Advising',    '#'
+          %li= link_to 'Academics',   '#'
+          %li= link_to 'Environment', '#'
+          %li= link_to 'Other',       '#'
+          %li= link_to 'Technology',  '#'
       %li= link_to 'Log In', root_path
-      %li
-        %a.sec2{:href => "section2.html"} My Ideas
-      %li
-        %a.sec3{:href => "section3.html"} Submit an Idea
-      %li
-        %a.sec4{:href => "section4.html"} Profile
+      %li= link_to 'My Ideas', @current_user
+      %li= link_to 'Submit an Idea', new_idea_path 
+      %li= link_to 'Profile',  edit_user_path(@current_user.id)

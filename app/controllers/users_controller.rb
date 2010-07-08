@@ -14,6 +14,9 @@ class UsersController < ApplicationController
   # GET /users/1.xml
   def show
     @user = User.find(params[:id])
+    if params[:id].to_i == @current_user.id
+	    @ideas = Idea.find_all_by_creator(@current_user)
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -80,4 +83,14 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def ideas 
+	  @ideas = Idea.find_by_caseid(@current_user.id)
+
+	  respond_to do |format|
+		  format.html
+		  format.xml {render :xml => @ideas}
+	  end
+  end
+
 end

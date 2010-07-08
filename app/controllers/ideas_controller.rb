@@ -100,6 +100,7 @@ class IdeasController < ApplicationController
 	  end
   end
 
+
   private
 
   def check_permissions
