@@ -10,15 +10,8 @@ class Idea < ActiveRecord::Base
 
 
   def vote(dir)
-		if dir.eql? 'up'
-			self.upvotes += 1
-		elsif dir.eql? 'down' 
-			self.downvotes += 1
-		elsif dir.eql? 'new'
-			self.upvotes = 1
-			self.downvotes = 0
-		end
-		self.save
+	#make this do something to supports or remove it?  
+	self.save
   end
 
   def add_creator(creator)
