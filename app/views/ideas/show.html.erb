@@ -27,5 +27,12 @@
 <%= link_to_unless( @current_user.id != @idea.creator, 'Edit', edit_idea_path(@idea)){} %> 
 <%= link_to_unless( @current_user.id != @idea.creator,  'Destroy', @idea, :confirm => 'Are you sure?', :method => :delete) {} %> 
 <%= link_to 'Back', ideas_path %>
+
+<%= form_tag :action => 'comment',  :id => @idea%>
+<%= text_area "comment", "body" %><br>
+<%= submit_tag "Comment" %>
+</form>
+<%= render :partial => 'comments/list' %>
+
 </div>
 </div>

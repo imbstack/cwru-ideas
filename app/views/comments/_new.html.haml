@@ -1,0 +1,9 @@
+.comment
+  - form_for(@comment) do |f|
+    = f.error_messages 
+    %span Add a Comment
+    %p
+      = f.text_area :body
+    %p
+      = f.submit 'Create'
+
