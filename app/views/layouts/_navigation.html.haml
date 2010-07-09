@@ -10,7 +10,9 @@
           %li= link_to 'Environment', '#'
           %li= link_to 'Other',       '#'
           %li= link_to 'Technology',  '#'
-      %li= link_to 'Log In', root_path
-      %li= link_to 'My Ideas', @current_user
       %li= link_to 'Submit an Idea', new_idea_path 
-      %li= link_to 'Profile',  edit_user_path(@current_user.id)
+      - if (defined? @current_user)
+        %li= link_to 'My Ideas', @current_user
+        %li= link_to 'Profile',  edit_user_path(@current_user.id)
+      - else
+        %li= link_to 'Log In', root_path
