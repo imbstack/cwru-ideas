@@ -2,7 +2,7 @@
   %h2= link_to idea.title, idea
   .supportButton
     %a{:href => vote_url(:id => idea.id) }
-      - if Vote.find(:all, :conditions => { :user_id => @current_user.id, :idea_id => idea.id}).length != 0
+      - if defined? @current_user.id and Vote.find(:all, :conditions => { :user_id => @current_user.id, :idea_id => idea.id}).length != 0
         %span.supported
       - else
         %span.unsupported

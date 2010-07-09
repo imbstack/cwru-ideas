@@ -4,7 +4,6 @@
 
 
 class ApplicationController < ActionController::Base
-  before_filter CASClient::Frameworks::Rails::Filter
   before_filter :setup_cas_user
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details

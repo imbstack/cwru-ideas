@@ -1,5 +1,3 @@
-%h2= "Welcome #{@current_user.name}!"
 - if !@message.empty?
   %strong= @message[0] + link_to('profile', @message[1]) +  @message[2]
 = render :partial => "ideas/idea", :locals => { :idea => Idea.all.last, :featured => true }
-= render :partial => "ideas/idea", :locals => { :idea => Idea.all.first }
