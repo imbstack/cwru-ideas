@@ -119,6 +119,8 @@ class IdeasController < ApplicationController
 			  format.html { redirect_to(ideas_url)}
 			  format.xml {head :method_not_allowed}
 		  end
+	  else
+		  @is_creator = true
 	  end
   end
 

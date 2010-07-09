@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   def index	 
-    ideas = Idea.all
-    @last = ideas.last
+    @ideas = Idea.all
+    @last = @ideas.last
 
   end
 

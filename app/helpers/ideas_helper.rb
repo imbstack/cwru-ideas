@@ -1,3 +1,0 @@
-module IdeasHelper
-
-end

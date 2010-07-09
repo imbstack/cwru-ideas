@@ -1,3 +1,4 @@
 - if !@message.empty?
   %strong= @message[0] + link_to('profile', @message[1]) +  @message[2]
-= render :partial => "ideas/idea", :locals => { :idea => Idea.all.last, :featured => true }
+- if !@ideas.nil?
+  = render :partial => "ideas/idea", :locals => { :idea => @last, :featured => true }

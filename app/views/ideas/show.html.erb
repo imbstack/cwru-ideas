@@ -22,8 +22,8 @@
 <%= Category.find(@idea.category_id).name %>
 </p>
 
-<%= link_to_unless( @current_user.id != @idea.user, 'Edit', edit_idea_path(@idea)){} %> 
-<%= link_to_unless( @current_user.id != @idea.user,  'Destroy', @idea, :confirm => 'Are you sure?', :method => :delete) {} %> 
+<%= link_to_unless( @is_creator, 'Edit', edit_idea_path(@idea)){} %> 
+<%= link_to_unless( @is_creator,  'Destroy', @idea, :confirm => 'Are you sure?', :method => :delete) {} %> 
 <%= link_to 'Back', ideas_path %>
 
 <%= form_tag :action => 'comment',  :id => @idea%>
