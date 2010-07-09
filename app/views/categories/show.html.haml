@@ -1,0 +1,3 @@
+- @ideas.each do |idea|
+  = render :partial => "ideas/idea", :locals => { :idea => idea }
+%strong= link_to 'New idea', new_idea_path 
