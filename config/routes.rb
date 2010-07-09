@@ -3,11 +3,12 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :users
 
-  map.resources :users
-
   map.resources :broadcasts
 
   map.resources :ideas
+
+  map.resources :categories
+ 
   map.vote 'ideas/:id/support', :controller => 'ideas', :action => 'support' 
 
   # The priority is based upon order of creation: first created -> highest priority.
