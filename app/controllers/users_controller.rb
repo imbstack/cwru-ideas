@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     if params[:id].to_i == @current_user.id
-	    @ideas = Idea.find_all_by_creator(@current_user)
+	    @ideas = @current_user.ideas
     end
 
     respond_to do |format|
@@ -84,13 +84,5 @@ class UsersController < ApplicationController
     end
   end
 
-  def ideas 
-	  @ideas = Idea.find_by_caseid(@current_user.id)
-
-	  respond_to do |format|
-		  format.html
-		  format.xml {render :xml => @ideas}
-	  end
-  end
 
 end

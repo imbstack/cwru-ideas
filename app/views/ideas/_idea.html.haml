@@ -9,6 +9,6 @@
   %p.ideaDesc#full
     = idea.body
   .ideaDetails
-    = link_to '203 comments', '#'
+    = link_to idea.comments.length.to_s + ' comments', idea
     &#183; submitted by
-    = link_to idea.get_creator_name, '#'
+    = link_to idea.user.name, idea.user

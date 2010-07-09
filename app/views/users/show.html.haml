@@ -23,7 +23,7 @@
       - @ideas.each do |idea|
         %tr
           %td= h idea.title
-          %td= h idea.get_creator_name
+          %td= h idea.user.name
           %td= h idea.body
           %td= render :partial => 'ideas/vote', :locals => {:idea => idea}
           %td= link_to 'Show', idea

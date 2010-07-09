@@ -17,7 +17,7 @@ class IdeasController < ApplicationController
   # GET /ideas/1.xml
   def show
     @idea = Idea.find(params[:id])
-    @author = User.find(@idea.creator)
+    @author = User.find(@idea.user)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -28,9 +28,7 @@ class IdeasController < ApplicationController
   # GET /ideas/new
   # GET /ideas/new.xml
   def new
-    @idea = Idea.new
-    @idea.vote('new');
-    @idea.add_creator(@current_user.id)
+    @idea = @current_user.ideas.create(params[:idea])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -48,8 +46,8 @@ class IdeasController < ApplicationController
 
   # POST /ideas
   # POST /ideas.xml
-  def create
-    @idea = Idea.new(params[:idea])
+  def create 
+    @idea = @current_user.ideas.create(params[:idea])
 
     respond_to do |format|
       if @idea.save
@@ -113,7 +111,7 @@ class IdeasController < ApplicationController
 
   def check_permissions
 	  return unless !params[:id].nil?
-	  creator = Idea.find(params[:id]).creator
+	  creator = Idea.find(params[:id]).user.id
 	  if creator != @current_user.id
 		  respond_to do |format|
 			  format.html { redirect_to(ideas_url)}
