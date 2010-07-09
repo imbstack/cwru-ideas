@@ -2,7 +2,7 @@ class IdeasController < ApplicationController
 
   before_filter CASClient::Frameworks::Rails::Filter, :except => [:index, :show]
   before_filter :setup_cas_user, :except => [:index, :show]
-  before_filter :check_permissiens, :except => [:index, :show, :support]
+  before_filter :check_permissions, :except => [:index, :show, :support]
 
   # GET /ideas
   # GET /ideas.xml
