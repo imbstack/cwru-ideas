@@ -30,7 +30,7 @@ class IdeasController < ApplicationController
   # GET /ideas/new
   # GET /ideas/new.xml
   def new
-    @idea = @current_user.ideas.create(params[:idea])
+    @idea = @current_user.ideas.new
 
     respond_to do |format|
       format.html # new.html.erb

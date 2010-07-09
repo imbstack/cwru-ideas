@@ -15,5 +15,6 @@ doc/plugins
 doc/*.dot
 coverage/*
 db/*.sqlite3
+db/schema.rb
 *.tmproj
 *.sw?
