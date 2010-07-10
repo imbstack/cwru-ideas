@@ -4,6 +4,10 @@ div.story#topIdea {
 	background-color:#E4F1FC;
 	padding:3px;
 }
+div.story#smallIdea {
+	height:45px;
+	clear:both;
+}
 div.story p.ideaDesc#full {
 	margin-left:104px;
 	margin-top:5px;
@@ -16,11 +20,26 @@ div.ideaDetails {
 	padding-top:5px;
 	margin-left: 105px;
 }
-div.supportButton {
+div.rightText {
+	float:left;
+	margin-left:10px;
+}
+div.rightText > h2 {
+	font-size:18px;
+}
+div.ideaDetails#smallIdea {
+	margin-left:0px
+}
+div.supportButton#bigIdea {
 	float:left;
 	position:relative;
 	top:8px;
 	left:13px;
+}
+div.supportButton#smallIdea {
+	float:left;
+	padding-left:10px;
+	padding-top:5px;
 }
 div.supportButton > a > span {
 	display:block;
