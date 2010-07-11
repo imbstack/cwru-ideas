@@ -28,22 +28,4 @@
           = image_tag 'blank.jpg', :width => 180, :height => 10, :alt => "frame image"
         = yield
       #rightCol
-        %div
-          %h4
-            Category Selections
-        .sideContent
-          %ul
-            %li
-              %strong
-                Advising
-              -
-              = link_to 'Idea 1', '#'
-            %li
-              %strong
-                Environment
-              -
-              = link_to 'Idea 2'
-        .calLink
-          %p
-            &raquo;
-            = link_to 'View full category list', '#'
+        = render :partial => "/layouts/populartags"
