@@ -55,6 +55,11 @@ div.supportButton > a > span.unsupported:hover {
 div.supportButton > a > span.supported {
 	background:url(/images/support.png) 0px -60px;
 }
+ul.breadcrumbs {
+	list-style:none;
+	padding:0px;
+	margin:0px;
+}	
 /* CWRU WEBSITE TEMPLATE [A] */
 
 body, html {margin: 0; height: 100%;}
