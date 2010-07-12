@@ -4,6 +4,7 @@ class IdeasController < ApplicationController
   before_filter CASClient::Frameworks::Rails::Filter, :except => [:index, :show]
   before_filter :setup_cas_user
   before_filter :check_permissions, :except => [:index, :show, :support]
+  before_filter :add_initial_breadcrumbs
 
   # GET /ideas
   # GET /ideas.xml
@@ -121,6 +122,10 @@ class IdeasController < ApplicationController
 			  format.xml {head :method_not_allowed}
 		  end
 	  end
+  end
+
+  def add_initial_breadcrumbs
+      breadcrumbs.add "Ideas", ideas_path
   end
 
 end
