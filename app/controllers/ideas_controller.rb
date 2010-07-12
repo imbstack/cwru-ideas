@@ -108,8 +108,7 @@ class IdeasController < ApplicationController
 
   def comment
 	     idea = Idea.find(params[:id]).comments.create(params[:comment])
-	     idea.add_creator(@current_user.id)
-	     flash[:notice] = "Added your comment"
+	     idea.user = @current_user
 	     redirect_to :action => "show", :id => params[:id]
   end
 
