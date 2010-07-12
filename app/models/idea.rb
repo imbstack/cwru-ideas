@@ -1,7 +1,7 @@
 class Idea < ActiveRecord::Base
 
   belongs_to :user
-  belongs_to :category
+  belongs_to :tag
   has_many :comments
 
   def get_creator_name

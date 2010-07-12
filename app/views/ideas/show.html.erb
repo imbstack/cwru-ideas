@@ -18,8 +18,8 @@
   <%=h @idea.body %>
 </p>
 <p>
-<b>Category:</b>
-<%= Category.find(@idea.category_id).name %>
+<b>Tag:</b>
+<%= Tag.find(@idea.tag_id).name %>
 </p>
 
 <%= link_to_unless( @is_creator, 'Edit', edit_idea_path(@idea)){} %> 

@@ -5,8 +5,8 @@
       %li
         = link_to 'All Ideas', ideas_path 
         %ul
-          - Category.find(:all, :order => :name).each do |category|
-            %li= link_to category.name, category_path(category.id)
+          - Tag.find(:all, :order => :name).each do |tag|
+            %li= link_to tag.name, tag_path(tag.id)
       %li= link_to 'Submit an Idea', new_idea_path 
       - if (defined? @current_user)
         %li= link_to 'My Ideas', @current_user

@@ -3,14 +3,14 @@
     Popular Tags
   .sideContent
     %ul
-      - Category.find(:all, :order => :name).each do |category|
-        - if !category.ideas.empty?
+      - Tag.find(:all, :order => :name).each do |tag|
+        - if !tag.ideas.empty?
           %li
             %strong
-              = link_to category.name, category
+              = link_to tag.name, tag
               \-
-            = category.ideas.last.title
+            = tag.ideas.last.title
       .calLink
         %p
           &raquo;
-          = link_to 'View full category list', '#'
+          = link_to 'View full tag list', tags_path

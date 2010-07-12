@@ -12,8 +12,8 @@
     <%= f.text_area :body %>
     </p>
    <p>
-    <% @categories = Category.find(:all, :order => :name); %>
-    <%= f.collection_select :category_id, @categories, :id, :name %>
+    <% @tags = Tag.find(:all, :order => :name); %>
+    <%= f.collection_select :tag_id, @tags, :id, :name %>
   <p>
     <%= f.submit 'Create' %>
   </p>

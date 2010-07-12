@@ -7,7 +7,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :ideas
 
-  map.resources :categories
+  map.resources :tags
  
   map.vote 'ideas/:id/support', :controller => 'ideas', :action => 'support' 
 
