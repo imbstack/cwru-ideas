@@ -4,11 +4,12 @@
   .sideContent
     %ul
       - Category.find(:all, :order => :name).each do |category|
-        %li
-          %strong
-            = link_to category.name, category
-            \-
-          = category.ideas.last.title
+        - if !category.ideas.empty?
+          %li
+            %strong
+              = link_to category.name, category
+              \-
+            = category.ideas.last.title
       .calLink
         %p
           &raquo;

@@ -1,0 +1,6 @@
+%table
+  - @tags.each do |tag|
+    %tr
+      %td= tag.name
+
+%strong= link_to 'Add Tag', new_category_path

@@ -1,0 +1,9 @@
+%h1 Add a tag
+
+- form_for(@tag) do |f|
+  = f.error_messages
+  = f.label :name
+  = f.text_field :name
+  = f.submit 'Add Tag'
+
+= link_to 'Back', categories_path
