@@ -28,7 +28,7 @@ class TagsController < ApplicationController
 	end
 
 	def create
-		@tag = Tag.create
+		@tag = Tag.create(params[:tag])
 
 		respond_to do |format|
       		  if @tag.save
