@@ -20,8 +20,11 @@ class IdeasController < ApplicationController
   # GET /ideas/1
   # GET /ideas/1.xml
   def show
+
     @idea = Idea.find(params[:id])
     @author = User.find(@idea.user)
+    breadcrumbs.add @idea.category.name, url_for(@idea.category)
+    breadcrumbs.add truncate(@idea.title, :length => 30), idea_path(@idea)
 
     respond_to do |format|
       format.html # show.html.erb

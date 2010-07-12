@@ -59,7 +59,10 @@ ul.breadcrumbs {
 	list-style:none;
 	padding:0px;
 	margin:0px;
-}	
+}
+ul.breadcrumbs > li {
+	float:left;
+}
 /* CWRU WEBSITE TEMPLATE [A] */
 
 body, html {margin: 0; height: 100%;}

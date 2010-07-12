@@ -4,6 +4,7 @@
 
 
 class ApplicationController < ActionController::Base
+  include ActionView::Helpers::TextHelper
 
   before_filter CASClient::Frameworks::Rails::GatewayFilter
   before_filter :setup_cas_user

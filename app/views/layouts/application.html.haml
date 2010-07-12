@@ -13,7 +13,7 @@
       .breadcrumbC
         %h2
           %strong
-            = breadcrumbs.render
+            = breadcrumbs.render(:format => :inline, :separator => "/")
       .sideLink
         &raquo;
         = link_to 'Extra link goes here', '#'
