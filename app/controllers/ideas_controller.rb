@@ -23,7 +23,7 @@ class IdeasController < ApplicationController
 
     @idea = Idea.find(params[:id])
     @author = User.find(@idea.user)
-    breadcrumbs.add @idea.category.name, url_for(@idea.category)
+    #breadcrumbs.add @idea.category.name, url_for(@idea.categoyi)
     breadcrumbs.add truncate(@idea.title, :length => 30), idea_path(@idea)
 
     respond_to do |format|
