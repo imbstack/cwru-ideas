@@ -109,6 +109,7 @@ class IdeasController < ApplicationController
   def comment
 	     idea = Idea.find(params[:id]).comments.create(params[:comment])
 	     idea.user = @current_user
+	     idea.save
 	     redirect_to :action => "show", :id => params[:id]
   end
 
