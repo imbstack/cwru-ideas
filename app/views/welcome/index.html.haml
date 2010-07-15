@@ -2,3 +2,24 @@
   %strong= @message[0] + link_to('profile', @message[1]) +  @message[2]
 - if !@ideas.nil?
   = render :partial => "ideas/idea", :locals => { :idea => @last, :featured => true }
+.story
+  %h2
+    Case Western Needs Your Ideas!
+  %p
+    = image_tag "thumb4.png", :width => "210", :height => "130", :alt => "Case Western Reserve University", :align => "left"
+    You have good ideas. Why not share them with those who can listen? Would you like to see more dining options at Fribley? Do you have an idea for a club, but want a place to gather support? You've come to the right place. Simply submit your idea here, then spread the word.
+.story{:style => "clear:both"}
+  %h2
+    Can You Put These Ideas Into Action?
+  %p
+    = image_tag "thumb3.png", :width => "210", :height => "130", :alt => "Case Western Reserve University", :align => "left"
+    The best ideas won't make a difference if no one hears them. If you are a faculty member or staff employee of Case, we implore you to listen to students' ideas in this open, community-driven forum. If you are an executive member of a student group, listening to your members has never been easier.
+    %b
+      Anyone employed by Case or in an executive position of a student organization can apply to be a 
+      %em
+        representative
+      for their department or group. 
+    For more information, including signup instructions, please see the
+    %a{:href => "#"}
+      apply to be a representative
+    page.
