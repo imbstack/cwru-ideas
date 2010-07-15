@@ -12,5 +12,5 @@
     = link_to " #{idea.comments.length.to_s} comments", idea
     &#183; submitted by
     = link_to idea.user.name, idea.user
-    in
-    = link_to idea.tag.name, tag_path(idea.tag.id)
+    at
+    = idea.created_at

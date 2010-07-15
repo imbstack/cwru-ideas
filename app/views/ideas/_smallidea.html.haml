@@ -10,5 +10,5 @@
     .ideaDetails#smallIdea
       by
       = link_to idea.user.name, idea.user
-      in
-      = link_to idea.tag.name, tag_path(idea.tag.id)
+      at
+      = idea.created_at
