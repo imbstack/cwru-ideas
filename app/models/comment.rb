@@ -1,8 +1,6 @@
 class Comment < ActiveRecord::Base
-	belongs_to :idea
 
-	def add_creator(creator)
-		self.creator = creator
-		self.save
-	end
+	belongs_to :idea
+	belongs_to :user
+
 end

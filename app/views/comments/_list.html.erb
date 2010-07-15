@@ -1,12 +1,12 @@
 <table>
   <tr>
-    <th>Creator</th>
-    <th>Body</th>
+    <th>Commentor</th>
+    <th>Comment</th>
   </tr>
 
 <% @idea.comments.each do |comment| %>
   <tr>
-    <td><%=h comment.creator %></td>
+    <td><%=h comment.user.name %></td>
     <td><%=h comment.body %></td>
     <td><%= link_to 'Show', comment %></td>
     <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
