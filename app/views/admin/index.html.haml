@@ -1,0 +1,13 @@
+%h1 User Permission Settings
+%table
+  %tr
+    %th User 
+    %th representive?
+    %th admin?
+    - @users.each do |user|
+      %tr
+        %td= user.name
+        %td= check_box_tag 'is_rep', 'is_rep', user.is_rep?
+        %td= check_box_tag 'is_admin', 'is_admin',  user.is_admin?
+
+
