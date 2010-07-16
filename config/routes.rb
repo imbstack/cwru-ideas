@@ -1,6 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :admins
-
   map.resources :comments
 
   map.resources :users
