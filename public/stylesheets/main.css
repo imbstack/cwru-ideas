@@ -112,6 +112,7 @@ img{border:none; }
 	overflow: hidden;
 	background-color: #626262;
 	margin: 0;
+	border-top: 1px solid #fff;
 }
 #featureHolder {
 	position:relative;
@@ -708,3 +709,15 @@ a:active {
 	text-decoration: underline;
 
 }
+
+
+
+/*------------------- Brians stuff -------*/
+
+.comment {
+	background-color: #effcff;
+	margin: 30px;
+	padding: 10px;
+	border: solid 1px #999;
+}
+
