@@ -1,13 +1,3 @@
-%table#comments
-  %tr
-    %th Commentor
-    %th Comment
-    - @idea.comments.each do |comment|
-      %tr
-        %td= h comment.user.name
-        %td
-          :textile 
-            #{h comment.body}
-        %td= link_to 'Show', comment
-        %td= link_to 'Edit', edit_comment_path(comment)
-        %td= link_to 'Destroy', comment, :confirm => 'Are you sure?', :method => :delete
+#comments
+  - @idea.comments.each do |comment|
+    = render :partial => 'comments/show', :locals => {:comment => comment}

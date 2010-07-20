@@ -3,7 +3,7 @@
 %span parsed with 
 %a{:href => 'http://www.textism.com/tools/textile/'} textile
 = form_remote_tag :update => "comments", :url => {:controller => '/ideas', :action => 'comment', :id => @idea}
-= text_area "comment", "body"
+= text_area "comment", "body", :rows => 7
 %br
   = submit_tag "Comment"
 

@@ -3,7 +3,7 @@ class IdeasController < ApplicationController
   #before_filter CASClient::Frameworks::Rails::GatewayFilter, :only => [:index, :show]
   before_filter CASClient::Frameworks::Rails::Filter, :except => [:index, :show]
   before_filter :setup_cas_user
-  before_filter :check_permissions, :except => [:index, :show, :support]
+  before_filter :check_permissions, :except => [:index, :show, :support, :comment]
   before_filter :add_initial_breadcrumbs
 
   # GET /ideas
