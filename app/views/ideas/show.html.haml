@@ -1,0 +1,23 @@
+#container
+  #content
+    %p
+      %b Title:
+      = h @idea.title
+    %p
+      %b Author:
+      = h @idea.user.name
+    %p
+      %b
+        %a{:href => vote_url(@idea.id)} Vote for this idea!
+    %p
+      %b Body:
+      :textile
+        #{ h @idea.body}
+    %p
+      %b Tag:
+      = Tag.find(@idea.tag_id).name
+    = link_to_unless( @is_creator, 'Edit', edit_idea_path(@idea)){}
+    = link_to_unless( @is_creator,  'Destroy', @idea, :confirm => 'Are you sure?', :method => :delete) {}
+    = link_to 'Back', ideas_path
+    = render :partial => 'comments/new'
+    = render :partial => 'comments/list'

@@ -7,7 +7,7 @@
     <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.label :body %><br />
+    <%= f.label :body %> (uses <a href="http://www.textism.com/tools/textile/">textile</a>)<br />
     <%= f.text_area :body %>
     <% @tags = Tag.find(:all, :order => :name) %>
     <%= f.collection_select :tag_id, @tags, :id, :name %>

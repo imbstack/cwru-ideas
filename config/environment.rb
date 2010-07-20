@@ -46,6 +46,7 @@ Rails::Initializer.run do |config|
   config.gem "rubycas-client", :lib => 'casclient'
   config.gem "easy_roles"
   config.gem "breadcrumbs"
+  config.gem "RedCloth"
 
 
 end

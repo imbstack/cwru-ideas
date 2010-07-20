@@ -1,9 +1,9 @@
-.comment
-  - form_for(@comment) do |f|
-    = f.error_messages 
-    %span Add a Comment
-    %p
-      = f.text_area :body
-    %p
-      = f.submit 'Create'
+%hr
+%h2 Comment
+%span parsed with 
+%a{:href => 'http://www.textism.com/tools/textile/'} textile
+= form_remote_tag :update => "comments", :url => {:controller => '/ideas', :action => 'comment', :id => @idea}
+= text_area "comment", "body"
+%br
+  = submit_tag "Comment"
 

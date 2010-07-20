@@ -107,10 +107,12 @@ class IdeasController < ApplicationController
   end
 
   def comment
-	     comment = Idea.find(params[:id]).comments.create(params[:comment])
+	     @idea = Idea.find(params[:id])
+	     comment = @idea.comments.create(params[:comment])
 	     comment.user = @current_user
 	     comment.save
-	     redirect_to :action => "show", :id => params[:id]
+	     #redirect_to :action => "show", :id => params[:id]
+	     render :partial => 'comments/list'
   end
 
 
