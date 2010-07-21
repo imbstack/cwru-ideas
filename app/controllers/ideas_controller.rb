@@ -9,7 +9,9 @@ class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.xml
   def index
-    @ideas = Idea.all
+    #@ideas = Idea.all
+    @ideas = Idea.paginate :page => params[:page], :order => 'created_at DESC'
+
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,3 +1,4 @@
 - @ideas.each do |idea|
   = render :partial => "ideas/smallidea", :locals => { :idea => idea }
+= will_paginate @ideas
 %strong= link_to 'New idea', new_idea_path 
