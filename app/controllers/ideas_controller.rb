@@ -109,6 +109,18 @@ class IdeasController < ApplicationController
 		  format.xml {head :ok}
 	  end
   end
+  
+  def unsupport
+	  @idea = Idea.find(params[:id])
+	  v = Vote.find_by_user_id_and_idea_id @current_user.id, @idea.id
+	  v.destroy
+
+	  respond_to do |format|
+		  format.html { render :partial => 'smallidea', :locals => {:idea => @idea}}
+		  format.xml {head :ok}
+	  end
+  end
+
 
   def comment
 	     @idea = Idea.find(params[:id])

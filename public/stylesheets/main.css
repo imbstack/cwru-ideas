@@ -30,6 +30,9 @@ div.rightText > h2 {
 div.ideaDetails.smallIdea {
 	margin-left:0px
 }
+div.supportButton small {
+	margin-left: 8px;
+}
 div.supportButton.bigIdea {
 	float:left;
 	position:relative;
