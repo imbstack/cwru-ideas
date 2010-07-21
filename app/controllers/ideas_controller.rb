@@ -105,7 +105,7 @@ class IdeasController < ApplicationController
 	  v.register
 
 	  respond_to do |format|
-		  format.html { redirect_to(ideas_url) }
+		  format.html { render :partial => 'smallidea', :locals => {:idea => @idea}}
 		  format.xml {head :ok}
 	  end
   end
