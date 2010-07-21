@@ -1,5 +1,5 @@
 class Tag < ActiveRecord::Base
-	has_many :ideas
+	has_and_belongs_to_many :ideas
 
 	validates_presence_of :name
 end

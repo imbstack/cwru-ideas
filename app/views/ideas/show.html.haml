@@ -14,8 +14,9 @@
       :textile
         #{ h @idea.body}
     %p
-      %b Tag:
-      = Tag.find(@idea.tag_id).name
+      %b Tags:
+      - @idea.tags.each do |tag|
+        = tag.name
     = link_to_unless( @is_creator, 'Edit', edit_idea_path(@idea)){}
     = link_to_unless( @is_creator,  'Destroy', @idea, :confirm => 'Are you sure?', :method => :delete) {}
     = link_to 'Back', ideas_path

@@ -53,7 +53,9 @@ class IdeasController < ApplicationController
 
   # POST /ideas
   # POST /ideas.xml
-  def create 
+  def create
+    params[:idea][:tags] = params[:idea][:tags].collect { |tag| Tag.find(tag) }
+
     @idea = @current_user.ideas.create(params[:idea])
 
     respond_to do |format|
