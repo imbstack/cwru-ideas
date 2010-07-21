@@ -47,6 +47,7 @@ Rails::Initializer.run do |config|
   config.gem "easy_roles"
   config.gem "breadcrumbs"
   config.gem "RedCloth"
+  config.gem 'will_paginate', :version => '~> 2.3.14', :source => 'http://gemcutter.org'
 
 
 end
