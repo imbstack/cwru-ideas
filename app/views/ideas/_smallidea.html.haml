@@ -1,5 +1,5 @@
-.story#smallIdea
-  .supportButton#smallIdea
+.story.smallIdea
+  .supportButton.smallIdea
     %a{:href => vote_url(:id => idea.id) }
       - if defined? @current_user.id and Vote.find(:all, :conditions => { :user_id => @current_user.id, :idea_id => idea.id}).length != 0
         %span.supported
@@ -7,7 +7,7 @@
         %span.unsupported
   .rightText
     %h2= link_to truncate(idea.title, :length=>60), idea
-    .ideaDetails#smallIdea
+    .ideaDetails.smallIdea
       by
       = link_to idea.user.name, idea.user
       at

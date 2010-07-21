@@ -1,14 +1,14 @@
 @charset "UTF-8";
 
-div.story#topIdea {
+div.story.topIdea {
 	background-color:#E4F1FC;
 	padding:3px;
 }
-div.story#smallIdea {
+div.story.smallIdea {
 	height:45px;
 	clear:both;
 }
-div.story p.ideaDesc#full {
+div.story p.ideaDesc.full {
 	margin-left:104px;
 	margin-top:5px;
 }
@@ -27,16 +27,16 @@ div.rightText {
 div.rightText > h2 {
 	font-size:18px;
 }
-div.ideaDetails#smallIdea {
+div.ideaDetails.smallIdea {
 	margin-left:0px
 }
-div.supportButton#bigIdea {
+div.supportButton.bigIdea {
 	float:left;
 	position:relative;
 	top:8px;
 	left:13px;
 }
-div.supportButton#smallIdea {
+div.supportButton.smallIdea {
 	float:left;
 	padding-left:10px;
 	padding-top:5px;
