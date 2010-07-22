@@ -4,7 +4,7 @@
       %span.supported
     = link_to_remote '<small>unsupport</small>', :url =>{:action => 'unsupport', :id => idea.id}, :update => idea.id
   - else
-    = link_to_remote '<span class="unsupported"></span>', :url => {:action => 'support', :id => idea.id}, :update => idea.id, :success => "myLightWindow.activateWindow({href: '/ideas/post_vote/#{idea.id}'});"
+    = link_to_remote '<span class="unsupported"></span>', :url => {:action => 'support', :id => idea.id}, :update => idea.id, :success => "myLightWindow.activateWindow({href: '/integration', width: 500, height: 400});"
 .rightText
   %h2= link_to truncate(idea.title, :length=>60), idea
   .ideaDetails.smallIdea

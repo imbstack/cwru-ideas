@@ -9,6 +9,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :tags
 
+  map.resources :integration
+
   map.admin 'admin', :controller => 'admin'
  
   map.vote 'ideas/:id/support', :controller => 'ideas', :action => 'support'
