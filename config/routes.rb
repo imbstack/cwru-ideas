@@ -11,7 +11,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.admin 'admin', :controller => 'admin'
  
-  map.vote 'ideas/:id/support', :controller => 'ideas', :action => 'support' 
+  map.vote 'ideas/:id/support', :controller => 'ideas', :action => 'support'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
 

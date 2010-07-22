@@ -1,9 +1,10 @@
 .supportButton.smallIdea
   - if defined? @current_user.id and Vote.find(:all, :conditions => { :user_id => @current_user.id, :idea_id => idea.id}).length != 0
-    = link_to_remote '<span class="supported"></span>', :url => {:action => 'support', :id => idea.id}, :update => idea.id
+    %a
+      %span.supported
     = link_to_remote '<small>unsupport</small>', :url =>{:action => 'unsupport', :id => idea.id}, :update => idea.id
   - else
-    = link_to_remote '<span class="unsupported"></span>', :url => {:action => 'support', :id => idea.id}, :update => idea.id
+    = link_to_remote '<span class="unsupported"></span>', :url => {:action => 'support', :id => idea.id}, :update => idea.id, :success => "myLightWindow.activateWindow({href: '/ideas/post_vote/#{idea.id}'});"
 .rightText
   %h2= link_to truncate(idea.title, :length=>60), idea
   .ideaDetails.smallIdea

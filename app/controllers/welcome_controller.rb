@@ -10,9 +10,4 @@ class WelcomeController < ApplicationController
 
   end
 
-  def login 
-	  redirect_to root_path
-  end
-
-
 end

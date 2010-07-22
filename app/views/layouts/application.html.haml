@@ -4,8 +4,10 @@
   = stylesheet_link_tag 'main'
   = stylesheet_link_tag 'print', :media => "print"
   = stylesheet_link_tag 'cwruheader'
+  = stylesheet_link_tag 'lightwindow/lightwindow.css'
   = javascript_include_tag 'nav'
   = javascript_include_tag :defaults
+  = javascript_include_tag 'lightwindow.js'
 
 %body#home
   = render :partial => "/layouts/cwruheader"

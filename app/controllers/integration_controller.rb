@@ -1,0 +1,2 @@
+class IntegrationController < ApplicationController
+end
