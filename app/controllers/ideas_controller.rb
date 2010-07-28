@@ -1,8 +1,6 @@
 class IdeasController < ApplicationController
   
-  #before_filter CASClient::Frameworks::Rails::GatewayFilter, :only => [:index, :show]
   before_filter CASClient::Frameworks::Rails::Filter, :except => [:index, :show]
-  before_filter :setup_cas_user
   before_filter :check_permissions, :except => [:index, :show, :support, :comment, :unsupport]
   before_filter :add_initial_breadcrumbs
 
@@ -101,12 +99,29 @@ class IdeasController < ApplicationController
 
   def support
 	  @idea = Idea.find(params[:id])
-	  v = Vote.new( { :user_id => @current_user.id, :idea_id => params[:id] } )
-	  v.register
+	  if session[:cas_user].present?
+		  v = Vote.new( { :user_id => @current_user.id, :idea_id => params[:id] } )
+		  v.register
+	  end
+	  if params[:size] == 'small'
+	      respond_to do |format|
+		      if session[:cas_user].present?
+		      	      format.html { render :partial => 'smallidea', :locals => {:idea => @idea}}
+			      format.xml {head :ok}
+		      else
+	  	     	      format.html { render :partial => '/ideas/idea_denied'}
+		      end
+	      end
+	  else
+		respond_to do |format|
+		      if session[:cas_user].present?
+		      	      format.html { render :partial => '/ideas/idea', :locals => {:idea => @idea}}
+			      format.xml {head :ok}	
+		      else
+	  	     	      format.html { render :partial => '/ideas/idea_denied'}
+		      end
+	      end
 
-	  respond_to do |format|
-		  format.html { render :partial => 'smallidea', :locals => {:idea => @idea}}
-		  format.xml {head :ok}
 	  end
   end
   
@@ -114,10 +129,16 @@ class IdeasController < ApplicationController
 	  @idea = Idea.find(params[:id])
 	  v = Vote.find_by_user_id_and_idea_id @current_user.id, @idea.id
 	  v.destroy
-
-	  respond_to do |format|
-		  format.html { render :partial => 'smallidea', :locals => {:idea => @idea}}
-		  format.xml {head :ok}
+	  if params[:size] == 'small'
+	    respond_to do |format|
+	  	      format.html { render :partial => 'smallidea', :locals => {:idea => @idea}}
+		      format.xml {head :ok}
+	    end
+	  else
+		  respond_to do |format|
+	  	    		format.html { render :partial => 'idea', :locals => {:idea => @idea}}
+		    		format.xml {head :ok}
+	          end
 	  end
   end
 
@@ -146,6 +167,7 @@ class IdeasController < ApplicationController
 		  @is_creator = true
 	  end
   end
+
 
   def add_initial_breadcrumbs
       breadcrumbs.add "Ideas", ideas_path

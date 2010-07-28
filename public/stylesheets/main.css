@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-div.story.topIdea {
+div.story#topIdea {
 	background-color:#E4F1FC;
 	padding:3px;
 }

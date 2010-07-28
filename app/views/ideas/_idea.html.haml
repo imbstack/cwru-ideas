@@ -1,16 +1,18 @@
-.story{:class => (defined? featured != nil) ? "topIdea" : "" }
-  %h2= link_to idea.title, idea
-  .supportButton.bigIdea
-    %a{:href => vote_url(:id => idea.id) }
-      - if defined? @current_user.id and Vote.find(:all, :conditions => { :user_id => @current_user.id, :idea_id => idea.id}).length != 0
-        %span.supported
-      - else
-        %span.unsupported
-  %p.ideaDesc.full
-    = idea.body
-  .ideaDetails
-    = link_to " #{idea.comments.length.to_s} comments", idea
-    &#183; submitted by
-    = link_to idea.user.name, idea.user
-    at
-    = idea.created_at
+%h2= link_to idea.title, idea
+.supportButton.smallIdea
+  - if defined? @current_user.id and Vote.find(:all, :conditions => { :user_id => @current_user.id, :idea_id => idea.id}).length != 0
+    %a
+      %span.supported
+    = link_to_remote '<small>unsupport</small>', :url =>{:controller => 'ideas', :action => 'unsupport', :id => idea.id, :size => 'big'}, :update => 'topIdea'
+  - else
+    = link_to_remote '<span class="unsupported"></span>', :url => {:controller => 'ideas', :action => 'support', :id => idea.id, :size => 'big'}, :update => 'topIdea', :success => "myLightWindow.activateWindow({href: '/integration', width: 500, height: 400});"
+%p.ideaDesc.full
+  :textile
+      #{ h idea.body}
+.ideaDetails
+  = link_to " #{idea.comments.length.to_s} comments", idea
+  &#183; submitted by
+  = link_to idea.user.name, idea.user
+  at
+  = idea.created_at
+  %a{:href => '#', :onClick => 'kill(topIdea)', :style => "float:right"} close (x)
