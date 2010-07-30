@@ -11,24 +11,13 @@
   %b Major:
   =h @user.major
 
-
-- if params[:id].to_i == @current_user.id
-  %table
-    %tr
-      %th Title 
-      %th Author
-      %th Body
-      %th Upvotes
-      %th Downvotes
-      - @ideas.each do |idea|
-        %tr
-          %td= h idea.title
-          %td= h idea.user.name
-          %td= h idea.body
-          %td= render :partial => 'ideas/vote', :locals => {:idea => idea}
-          %td= link_to 'Show', idea
-
-
-
 = link_to 'Edit', edit_user_path(@user)
-= link_to 'Back', users_path 
+|
+= link_to 'All Users', users_path
+%h2 #{@user.name}'s Ideas
+
+- @ideas.each do |idea|
+  .story.smallIdea{:id => idea.id}
+    = render :partial => 'ideas/smallidea', :locals => {:idea => idea}
+
+

@@ -10,9 +10,16 @@
   = javascript_include_tag 'lightwindow.js'
   :javascript
     document.observe("dom:loaded", function() {
-      new Effect.BlindDown('topIdea', {duration: .75});
+      hiddens = $$('div.hidden');
+      for (div in hiddens){
+        hiddens[div].hide();
+      }
     });
     
     function kill(el){
       new Effect.BlindUp(el);
+    }
+
+    function slide(el){
+      new Effect.BlindDown(el);
     }

@@ -9,8 +9,8 @@
   <p>
     <%= f.label :body %> (uses <a href="http://www.textism.com/tools/textile/">textile</a>)<br />
     <%= f.text_area :body %>
-    <% @tags = Tag.find(:all, :order => :name) %>
-    <%= f.collection_select :tag_id, @tags, :id, :name %>
+    <% @tags = Tag.find(:all, :order => :name) %><br/>
+    <%= select :idea, :tags, @tags.collect { |tag| [tag.name, tag.id] },{},{ :multiple => true } %>
     </p>
       <%= f.submit 'Update' %>
 <% end %>

@@ -73,7 +73,7 @@ class IdeasController < ApplicationController
   # PUT /ideas/1.xml
   def update
     @idea = Idea.find(params[:id])
-
+    params[:idea][:tags] = params[:idea][:tags].collect { |tag| Tag.find(tag) }
     respond_to do |format|
       if @idea.update_attributes(params[:idea])
         format.html { redirect_to(@idea, :notice => 'Idea was successfully updated.') }

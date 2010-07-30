@@ -466,8 +466,13 @@ border:none;
 }
 #footer .footerContent .footerMiddleCol ul li a:hover {
 	font-weight: normal;
-	text-decoration: underline;		
 }
+
+#footer ul li a:hover {
+	text-decoration: none;
+	text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.55)
+}
+
 .footerLeftC {
 	position: absolute;
 	left: 0px;
@@ -722,4 +727,13 @@ a:active {
 	padding: 10px;
 	border: solid 1px #999;
 }
+
+.hidden {
+	/*display: none;*/
+	background-color: #effcff;
+	margin: 10px;
+	padding: 10px;
+	border: solid 1px #999;
+}
+
 

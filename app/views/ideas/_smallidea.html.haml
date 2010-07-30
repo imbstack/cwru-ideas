@@ -7,6 +7,13 @@
     = link_to_remote '<span class="unsupported"></span>', :url => {:action => 'support', :id => idea.id, :size => 'small'}, :update => idea.id, :success => "myLightWindow.activateWindow({href: '/integration', width: 500, height: 400});"
 .rightText
   %h2= link_to truncate(idea.title, :length=>60), idea
+  %a{:href => '#', :onclick => "slide(ft_#{idea.id})"}
+    %small +
+  .hidden.full_text{:id => "ft_#{idea.id}"}
+    = idea.body
+    %br
+    %a{:href => '#', :onclick => "kill(ft_#{idea.id})"}
+      %small close(x)
   .ideaDetails.smallIdea
     by
     = link_to idea.user.name, idea.user

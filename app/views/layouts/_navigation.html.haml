@@ -11,7 +11,7 @@
       %li= link_to 'Tags', tags_path
       - if (defined? @current_user)
         %li= link_to 'My Ideas', @current_user
-        %li= link_to 'Profile',  edit_user_path(@current_user.id)
+        %li= link_to 'Profile',  user_path(@current_user.id)
         - if @current_user.is_admin?
           %li= link_to 'Admin Settings', admin_path
       - else

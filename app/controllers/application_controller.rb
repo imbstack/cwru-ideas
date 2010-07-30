@@ -21,6 +21,6 @@ class ApplicationController < ActionController::Base
 		       @current_user.name = :cas_user
 		       @message = 'Please go to your ', @current_user ,' to update your information.'
 		end	       
-		@current_user.present?
+		return @current_user.present?
 	end
 end
